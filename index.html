@@ -4,11 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<h1>
-<span id="heartLeft">❤️</span>
-Felices 5 Meses Sofi
-<span id="heartRight">❤️</span>
-</h1>
+
 
 <style>
 
@@ -22,58 +18,7 @@ font-family:'Segoe UI',sans-serif;
 html{
 scroll-behavior:smooth;
 }
-<div id="mensajeDesbloqueado" class="secreto" style="display:none;">
 
-<h2>❤️ Has encontrado algo que escondí solo para vos ❤️</h2>
-
-<p>
-Si llegaste hasta aquí significa que seguiste explorando.
-Y como sabía que lo harías, quise dejarte unas palabras más.
-</p>
-
-</div>
-
-<div id="secreto" class="secreto" style="display:none;">
-
-<h2>✨ Encontraste el secreto ✨</h2>
-
-<p>
-Eres una persona realmente especial.
-</p>
-
-<p>
-Me queda claro que no hay nada que me haga más feliz que compartir cada instante contigo. Quisiera ser la razón de tu sonrisa todos los días.
-</p>
-
-<p>
-Aunque a veces me muera de celos por algunas cosas que pasan, me gusta cuando me miras. Me pones muy nervioso al hacerlo, pero aunque me deje como un idiota, es una de las sensaciones más bonitas que conozco.
-</p>
-
-<p>
-Tus ojos son tan cálidos que podría quedarme viéndolos todas las noches. Permíteme abrazarte y desearte siempre que tengas lindas noches.
-</p>
-
-<p>
-Quiero decirte que a veces voy a necesitarte, y aun así siempre voy a esperarte a ti. Espero que cuando me sienta perdido puedas abrazarme para ayudarme a seguir adelante.
-</p>
-
-<p>
-Gracias, amor, por estos 5 meses llenos de momentos, recuerdos, risas y locuras. Gracias por hacerme creer que puedo amarte sin límites. Gracias por ser quien eres.
-</p>
-
-<p>
-No cambies, amor.
-</p>
-
-<p>
-Te quiero muchísimo ❤️
-</p>
-
-<p>
-Att: Olanar
-</p>
-
-</div>
 body{
 background:black;
 color:white;
@@ -327,7 +272,7 @@ right:5px;
 }
 
 }
-}
+
 
 .secreto{
 display:none;
@@ -343,6 +288,24 @@ text-align:center;
 color:white;
 }
 
+  #heartLeft,
+#heartRight{
+cursor:pointer;
+transition:0.3s;
+}
+
+#heartLeft:hover,
+#heartRight:hover{
+transform:scale(1.2);
+}
+
+#heartLeft{
+margin-right:15px;
+}
+
+#heartRight{
+margin-left:15px;
+}
 /* NO CIERRES STYLE TODAVÍA */
 
 </style>
@@ -360,7 +323,11 @@ color:white;
 
 <div class="contenido">
 
-<h1>❤️ Felices 5 Meses Sofi ❤️</h1>
+<h1>
+<span id="heartLeft">❤️</span>
+&nbsp;&nbsp;Felices 5 Meses Sofi&nbsp;&nbsp;
+<span id="heartRight">❤️</span>
+</h1>
 
 <p>
 Hoy quería regalarte algo diferente.
@@ -657,11 +624,15 @@ mostrarSlide(slideActual);
 
   let clicksSecretos = 0;
 
+window.addEventListener("load", () => {
+
 document.getElementById("heartLeft")
 .addEventListener("click", activarSecreto);
 
 document.getElementById("heartRight")
 .addEventListener("click", activarSecreto);
+
+});
 
 function activarSecreto(){
 
@@ -690,6 +661,58 @@ behavior:"smooth"
 /* NO CIERRES SCRIPT TODAVÍA */
 
 </script>
+  <div id="mensajeDesbloqueado" class="secreto" style="display:none;">
+
+<h2>❤️ Has encontrado algo que escondí solo para vos ❤️</h2>
+
+<p>
+Si llegaste hasta aquí significa que seguiste explorando.
+Y como sabía que lo harías, quise dejarte unas palabras más.
+</p>
+
+</div>
+
+<div id="secreto" class="secreto" style="display:none;">
+
+<h2>✨ Encontraste el secreto ✨</h2>
+
+<p>
+Eres una persona realmente especial.
+</p>
+
+<p>
+Me queda claro que no hay nada que me haga más feliz que compartir cada instante contigo. Quisiera ser la razón de tu sonrisa todos los días.
+</p>
+
+<p>
+Aunque a veces me muera de celos por algunas cosas que pasan, me gusta cuando me miras. Me pones muy nervioso al hacerlo, pero aunque me deje como un idiota, es una de las sensaciones más bonitas que conozco.
+</p>
+
+<p>
+Tus ojos son tan cálidos que podría quedarme viéndolos todas las noches. Permíteme abrazarte y desearte siempre que tengas lindas noches.
+</p>
+
+<p>
+Quiero decirte que a veces voy a necesitarte, y aun así siempre voy a esperarte a ti. Espero que cuando me sienta perdido puedas abrazarme para ayudarme a seguir adelante.
+</p>
+
+<p>
+Gracias, amor, por estos 5 meses llenos de momentos, recuerdos, risas y locuras. Gracias por hacerme creer que puedo amarte sin límites. Gracias por ser quien eres.
+</p>
+
+<p>
+No cambies, amor.
+</p>
+
+<p>
+Te quiero muchísimo ❤️
+</p>
+
+<p>
+Att: Olanar
+</p>
+
+</div>
 
 </body>
 </html>
