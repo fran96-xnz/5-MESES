@@ -4,7 +4,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Felices 5 Meses Sofi ❤️</title>
+<h1>
+<span id="heartLeft">❤️</span>
+Felices 5 Meses Sofi
+<span id="heartRight">❤️</span>
+</h1>
 
 <style>
 
@@ -18,7 +22,58 @@ font-family:'Segoe UI',sans-serif;
 html{
 scroll-behavior:smooth;
 }
+<div id="mensajeDesbloqueado" class="secreto" style="display:none;">
 
+<h2>❤️ Has encontrado algo que escondí solo para vos ❤️</h2>
+
+<p>
+Si llegaste hasta aquí significa que seguiste explorando.
+Y como sabía que lo harías, quise dejarte unas palabras más.
+</p>
+
+</div>
+
+<div id="secreto" class="secreto" style="display:none;">
+
+<h2>✨ Encontraste el secreto ✨</h2>
+
+<p>
+Eres una persona realmente especial.
+</p>
+
+<p>
+Me queda claro que no hay nada que me haga más feliz que compartir cada instante contigo. Quisiera ser la razón de tu sonrisa todos los días.
+</p>
+
+<p>
+Aunque a veces me muera de celos por algunas cosas que pasan, me gusta cuando me miras. Me pones muy nervioso al hacerlo, pero aunque me deje como un idiota, es una de las sensaciones más bonitas que conozco.
+</p>
+
+<p>
+Tus ojos son tan cálidos que podría quedarme viéndolos todas las noches. Permíteme abrazarte y desearte siempre que tengas lindas noches.
+</p>
+
+<p>
+Quiero decirte que a veces voy a necesitarte, y aun así siempre voy a esperarte a ti. Espero que cuando me sienta perdido puedas abrazarme para ayudarme a seguir adelante.
+</p>
+
+<p>
+Gracias, amor, por estos 5 meses llenos de momentos, recuerdos, risas y locuras. Gracias por hacerme creer que puedo amarte sin límites. Gracias por ser quien eres.
+</p>
+
+<p>
+No cambies, amor.
+</p>
+
+<p>
+Te quiero muchísimo ❤️
+</p>
+
+<p>
+Att: Olanar
+</p>
+
+</div>
 body{
 background:black;
 color:white;
@@ -271,6 +326,21 @@ left:5px;
 right:5px;
 }
 
+}
+}
+
+.secreto{
+display:none;
+max-width:800px;
+margin:50px auto;
+padding:30px;
+background:rgba(255,255,255,.12);
+backdrop-filter:blur(12px);
+-webkit-backdrop-filter:blur(12px);
+border-radius:25px;
+line-height:1.8;
+text-align:center;
+color:white;
 }
 
 /* NO CIERRES STYLE TODAVÍA */
@@ -585,6 +655,38 @@ mostrarSlide(slideActual);
 
 },5000);
 
+  let clicksSecretos = 0;
+
+document.getElementById("heartLeft")
+.addEventListener("click", activarSecreto);
+
+document.getElementById("heartRight")
+.addEventListener("click", activarSecreto);
+
+function activarSecreto(){
+
+clicksSecretos++;
+
+if(clicksSecretos >= 5){
+
+document.getElementById("mensajeDesbloqueado")
+.style.display = "block";
+
+setTimeout(()=>{
+
+document.getElementById("secreto")
+.style.display = "block";
+
+document.getElementById("secreto")
+.scrollIntoView({
+behavior:"smooth"
+});
+
+},2000);
+
+}
+
+}
 /* NO CIERRES SCRIPT TODAVÍA */
 
 </script>
