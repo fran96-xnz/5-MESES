@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<title>Felices 5 Meses Sofi ❤️</title>
 
 <style>
 
@@ -274,38 +274,21 @@ right:5px;
 }
 
 
-.secreto{
-display:none;
-max-width:800px;
-margin:50px auto;
-padding:30px;
-background:rgba(255,255,255,.12);
-backdrop-filter:blur(12px);
--webkit-backdrop-filter:blur(12px);
-border-radius:25px;
-line-height:1.8;
-text-align:center;
-color:white;
-}
-
-  #heartLeft,
-#heartRight{
+#heartSecret{
 cursor:pointer;
-transition:0.3s;
+display:inline-block;
+transition:.3s;
 }
+#heartSecret:hover{transform:scale(1.25);}
 
-#heartLeft:hover,
-#heartRight:hover{
-transform:scale(1.2);
+.popupSecreto{
+display:none;position:fixed;top:0;left:0;width:100%;height:100%;
+background:rgba(0,0,0,.85);z-index:99999;justify-content:center;align-items:center;padding:20px;
 }
+.popupContenido{max-width:800px;max-height:85vh;overflow-y:auto;background:rgba(255,255,255,.12);
+backdrop-filter:blur(15px);-webkit-backdrop-filter:blur(15px);padding:35px;border-radius:25px;line-height:1.8;color:white;position:relative;}
+.cerrarPopup{position:absolute;right:20px;top:15px;font-size:32px;cursor:pointer;}
 
-#heartLeft{
-margin-right:15px;
-}
-
-#heartRight{
-margin-left:15px;
-}
 /* NO CIERRES STYLE TODAVÍA */
 
 </style>
@@ -324,9 +307,8 @@ margin-left:15px;
 <div class="contenido">
 
 <h1>
-<span id="heartLeft">❤️</span>
-&nbsp;&nbsp;Felices 5 Meses Sofi&nbsp;&nbsp;
-<span id="heartRight">❤️</span>
+❤️ Felices 5 Meses Sofi
+<span id="heartSecret">❤️</span>
 </h1>
 
 <p>
@@ -622,97 +604,36 @@ mostrarSlide(slideActual);
 
 },5000);
 
-  let clicksSecretos = 0;
 
-window.addEventListener("load", () => {
-
-document.getElementById("heartLeft")
-.addEventListener("click", activarSecreto);
-
-document.getElementById("heartRight")
-.addEventListener("click", activarSecreto);
-
-});
-
-function activarSecreto(){
-
+/* CORAZÓN SECRETO */
+let clicksSecretos=0;
+document.getElementById("heartSecret").addEventListener("click",()=>{
 clicksSecretos++;
-
-if(clicksSecretos >= 5){
-
-document.getElementById("mensajeDesbloqueado")
-.style.display = "block";
-
-setTimeout(()=>{
-
-document.getElementById("secreto")
-.style.display = "block";
-
-document.getElementById("secreto")
-.scrollIntoView({
-behavior:"smooth"
+if(clicksSecretos>=5){
+document.getElementById("popupSecreto").style.display="flex";
+}
 });
-
-},2000);
-
+function cerrarPopup(){
+document.getElementById("popupSecreto").style.display="none";
 }
 
-}
 /* NO CIERRES SCRIPT TODAVÍA */
 
 </script>
-  <div id="mensajeDesbloqueado" class="secreto" style="display:none;">
 
+
+<div id="popupSecreto" class="popupSecreto">
+<div class="popupContenido">
+<div class="cerrarPopup" onclick="cerrarPopup()">✖</div>
 <h2>❤️ Has encontrado algo que escondí solo para vos ❤️</h2>
-
-<p>
-Si llegaste hasta aquí significa que seguiste explorando.
-Y como sabía que lo harías, quise dejarte unas palabras más.
-</p>
-
-</div>
-
-<div id="secreto" class="secreto" style="display:none;">
-
-<h2>✨ Encontraste el secreto ✨</h2>
-
-<p>
-Eres una persona realmente especial.
-</p>
-
-<p>
-Me queda claro que no hay nada que me haga más feliz que compartir cada instante contigo. Quisiera ser la razón de tu sonrisa todos los días.
-</p>
-
-<p>
-Aunque a veces me muera de celos por algunas cosas que pasan, me gusta cuando me miras. Me pones muy nervioso al hacerlo, pero aunque me deje como un idiota, es una de las sensaciones más bonitas que conozco.
-</p>
-
-<p>
-Tus ojos son tan cálidos que podría quedarme viéndolos todas las noches. Permíteme abrazarte y desearte siempre que tengas lindas noches.
-</p>
-
-<p>
-Quiero decirte que a veces voy a necesitarte, y aun así siempre voy a esperarte a ti. Espero que cuando me sienta perdido puedas abrazarme para ayudarme a seguir adelante.
-</p>
-
-<p>
-Gracias, amor, por estos 5 meses llenos de momentos, recuerdos, risas y locuras. Gracias por hacerme creer que puedo amarte sin límites. Gracias por ser quien eres.
-</p>
-
-<p>
-No cambies, amor.
-</p>
-
-<p>
-Te quiero muchísimo ❤️
-</p>
-
-<p>
-Att: Olanar
-</p>
-
-</div>
-
+<p>Si llegaste hasta aquí significa que seguiste explorando. Y como sabía que lo harías, quise dejarte unas palabras más.</p>
+<p>Eres una persona realmente especial.</p>
+<p>Me queda claro que no hay nada que me haga más feliz que compartir cada instante contigo. Quisiera ser la razón de tu sonrisa todos los días.</p>
+<p>Aunque a veces me muera de celos por algunas cosas que pasan, me gusta cuando me miras. Me pones muy nervioso al hacerlo, pero es una de las sensaciones más bonitas que conozco.</p>
+<p>Tus ojos son tan cálidos que podría quedarme viéndolos todas las noches.</p>
+<p>Gracias amor por estos 5 meses llenos de momentos, recuerdos, risas y locuras.</p>
+<p>❤️ Te quiero muchísimo ❤️</p>
+<p>Att: Olanar</p>
+</div></div>
 </body>
 </html>
