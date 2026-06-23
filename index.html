@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Felices 5 Meses Sofi ❤️</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:black;
+color:white;
+overflow-x:hidden;
+}
+
+/* PORTADA */
+
+.hero{
+min-height:100vh;
+position:relative;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+
+background:
+linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1600");
+
+background-size:cover;
+background-position:center;
+}
+
+.overlay{
+position:absolute;
+inset:0;
+}
+
+.contenido{
+position:relative;
+z-index:2;
+padding:20px;
+}
+
+.hero h1{
+font-size:clamp(2rem,6vw,4rem);
+margin-bottom:20px;
+}
+
+.hero p{
+max-width:700px;
+font-size:1.1rem;
+line-height:1.6;
+}
+
+.hero button{
+margin-top:25px;
+padding:15px 30px;
+border:none;
+border-radius:50px;
+background:#ff4f81;
+color:white;
+font-size:1rem;
+cursor:pointer;
+}
+
+/* CARRUSEL */
+
+.carrusel-section{
+padding:80px 20px;
+text-align:center;
+
+background:
+linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.4)),
+url("https://images.unsplash.com/photo-1518895949257-7621c3c786d7?q=80&w=1600");
+
+background-size:cover;
+background-position:center;
+}
+
+.carrusel{
+max-width:420px;
+margin:40px auto;
+position:relative;
+}
+
+.slide{
+display:none;
+}
+
+.slide.active{
+display:block;
+animation:fade .8s;
+}
+
+.slide img{
+width:100%;
+border-radius:20px;
+box-shadow:0 0 25px rgba(255,255,255,.2);
+}
+
+.texto{
+margin-top:15px;
+font-size:1.1rem;
+font-weight:bold;
+}
+
+.prev,
+.next{
+position:absolute;
+top:45%;
+transform:translateY(-50%);
+border:none;
+background:rgba(255,255,255,.2);
+color:white;
+font-size:25px;
+padding:10px 15px;
+cursor:pointer;
+border-radius:50%;
+}
+
+.prev{
+left:-15px;
+}
+
+.next{
+right:-15px;
+}
+
+/* CARTA */
+
+.carta{
+padding:80px 20px;
+
+background:
+linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+url("https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=1600");
+
+background-size:cover;
+background-position:center;
+}
+
+.glass{
+max-width:850px;
+margin:auto;
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(12px);
+-webkit-backdrop-filter:blur(12px);
+
+padding:35px;
+border-radius:25px;
+
+line-height:1.9;
+}
+
+.glass h2{
+text-align:center;
+margin-bottom:25px;
+}
+
+.glass p{
+margin-bottom:20px;
+}
+
+/* PREGUNTA */
+
+.pregunta{
+padding:100px 20px;
+text-align:center;
+
+background:
+linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1600");
+
+background-size:cover;
+background-position:center;
+}
+
+.pregunta h2{
+margin-bottom:20px;
+font-size:2rem;
+}
+
+#contador{
+margin-bottom:20px;
+font-size:1.2rem;
+font-weight:bold;
+}
+
+.botones{
+margin-top:30px;
+}
+
+.botones button{
+margin:10px;
+padding:15px 25px;
+border:none;
+border-radius:50px;
+background:#ff4f81;
+color:white;
+font-size:1rem;
+cursor:pointer;
+}
+
+#mensajeFinal{
+display:none;
+margin-top:30px;
+font-size:1.4rem;
+animation:fade 1s;
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(25px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* CORAZONES */
+
+.heart{
+position:fixed;
+bottom:-20px;
+pointer-events:none;
+z-index:999;
+animation:subir linear forwards;
+}
+
+@keyframes subir{
+from{
+transform:translateY(0);
+opacity:1;
+}
+to{
+transform:translateY(-110vh);
+opacity:0;
+}
+}
+
+/* MOVIL */
+
+@media(max-width:768px){
+
+.glass{
+padding:22px;
+}
+
+.prev{
+left:5px;
+}
+
+.next{
+right:5px;
+}
+
+}
+
+/* NO CIERRES STYLE TODAVÍA */
+
+</style>
+
+</head>
+<body>
+
+<audio id="musica" loop>
+<source src="eres.mp3" type="audio/mpeg">
+</audio>
+
+<section class="hero">
+
+<div class="overlay"></div>
+
+<div class="contenido">
+
+<h1>❤️ Felices 5 Meses Sofi ❤️</h1>
+
+<p>
+Hoy quería regalarte algo diferente.
+Desliza hacia abajo y descubre cada parte de esta pequeña historia.
+</p>
+
+<button onclick="iniciar()">
+Abrir sorpresa 💌
+</button>
+
+</div>
+
+</section>
+
+<section class="carrusel-section">
+
+<h2>Nuestros recuerdos 📸</h2>
+
+<div class="carrusel">
+
+<div class="slide active">
+
+<img src="foto1.jpg">
+
+<div class="texto">
+Mi lugar favorito siempre será donde estés vos ❤️
+</div>
+
+</div>
+
+<div class="slide">
+
+<img src="foto2.jpg">
+
+<div class="texto">
+Esa sonrisa siempre logra alegrarme el día ✨
+</div>
+
+</div>
+
+<div class="slide">
+
+<img src="foto3.jpg">
+
+<div class="texto">
+Incluso a la distancia, siempre te sentí cerca 💕
+</div>
+
+</div>
+
+<button class="prev" onclick="cambiarSlide(-1)">
+❮
+</button>
+
+<button class="next" onclick="cambiarSlide(1)">
+❯
+</button>
+
+</div>
+
+</section>
+
+<section class="carta">
+
+<div class="glass">
+
+<h2>💌 Para Sofi 💌</h2>
+
+<p>
+Hoy cumplimos 5 meses juntos y quería hacer algo diferente para vos.
+</p>
+
+<p>
+Quizás para otras personas sea simplemente otro mes más, pero para mí significa muchísimo. Significa tiempo compartido, conversaciones, risas, recuerdos y momentos que se fueron convirtiendo en parte importante de mi vida.
+</p>
+
+<p>
+Me gusta saber que estás ahí, compartir mis días con vos y encontrar felicidad en cosas tan simples como hablar un rato o ver una de tus sonrisas.
+</p>
+
+<p>
+Gracias por acompañarme durante estos meses, por tu paciencia, tu cariño y por todos esos pequeños momentos que terminan siendo los más especiales.
+</p>
+
+<p>
+No sé qué nos espera en el futuro, pero sí sé que quiero seguir creando recuerdos con vos, seguir compartiendo momentos y seguir viendo esa sonrisa que tanto me gusta.
+</p>
+
+<p>
+Te quiero muchísimo Sofi ❤️
+</p>
+
+</div>
+
+</section>
+
+<section class="pregunta">
+
+<h2>❤️ Una última pregunta ❤️</h2>
+
+<div id="contador"></div>
+
+<p>
+Estos 5 meses fueron algunos de los más lindos de mi vida.
+¿Quieres seguir escribiendo esta historia conmigo?
+</p>
+
+<div class="botones">
+
+<button onclick="aceptar()">
+Sí ❤️
+</button>
+
+<button id="noBtn">
+No 😅
+</button>
+
+</div>
+
+<div id="mensajeFinal">
+
+❤️ Gracias por estos 5 meses tan hermosos ❤️
+
+<br><br>
+
+Te quiero muchísimo, Sofi.
+
+</div>
+
+</section>
+
+<script>
+
+let slideActual = 0;
+
+const slides = document.querySelectorAll(".slide");
+
+function mostrarSlide(n){
+
+slides.forEach(slide=>{
+slide.classList.remove("active");
+});
+
+slides[n].classList.add("active");
+
+}
+
+function cambiarSlide(direccion){
+
+slideActual += direccion;
+
+if(slideActual >= slides.length){
+slideActual = 0;
+}
+
+if(slideActual < 0){
+slideActual = slides.length - 1;
+}
+
+mostrarSlide(slideActual);
+
+}
+
+/* DESLIZAR CON EL DEDO EN MÓVIL */
+
+let startX = 0;
+
+const carrusel = document.querySelector(".carrusel");
+
+carrusel.addEventListener("touchstart",(e)=>{
+
+startX = e.touches[0].clientX;
+
+});
+
+carrusel.addEventListener("touchend",(e)=>{
+
+let endX = e.changedTouches[0].clientX;
+
+if(startX - endX > 50){
+cambiarSlide(1);
+}
+
+if(endX - startX > 50){
+cambiarSlide(-1);
+}
+
+});
+
+/* INICIAR */
+
+function iniciar(){
+
+const audio = document.getElementById("musica");
+
+audio.play().catch(()=>{});
+
+window.scrollTo({
+top:window.innerHeight,
+behavior:"smooth"
+});
+
+}
+
+/* CONTADOR */
+
+const inicio = new Date("2026-01-23");
+
+const hoy = new Date();
+
+const diferencia = hoy - inicio;
+
+const dias = Math.floor(
+diferencia / (1000 * 60 * 60 * 24)
+);
+
+document.getElementById("contador").innerHTML =
+"❤️ Ya compartimos " + dias + " días juntos ❤️";
+
+/* BOTÓN SÍ */
+
+function aceptar(){
+
+document.getElementById("mensajeFinal").style.display = "block";
+
+window.scrollTo({
+top:document.body.scrollHeight,
+behavior:"smooth"
+});
+
+}
+
+/* BOTÓN NO */
+
+const noBtn = document.getElementById("noBtn");
+
+noBtn.addEventListener("click",()=>{
+
+const ancho = window.innerWidth - 140;
+const alto = window.innerHeight - 100;
+
+noBtn.style.position = "fixed";
+
+noBtn.style.left =
+Math.random() * ancho + "px";
+
+noBtn.style.top =
+Math.random() * alto + "px";
+
+});
+
+/* CORAZONES */
+
+function crearCorazon(){
+
+const heart = document.createElement("div");
+
+heart.classList.add("heart");
+
+heart.innerHTML = "❤️";
+
+heart.style.left =
+Math.random()*100 + "vw";
+
+heart.style.fontSize =
+(15 + Math.random()*25) + "px";
+
+heart.style.animationDuration =
+(4 + Math.random()*4) + "s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},8000);
+
+}
+
+setInterval(crearCorazon,500);
+
+/* CAMBIO AUTOMÁTICO DE FOTOS */
+
+setInterval(()=>{
+
+slideActual++;
+
+if(slideActual >= slides.length){
+slideActual = 0;
+}
+
+mostrarSlide(slideActual);
+
+},5000);
+
+/* NO CIERRES SCRIPT TODAVÍA */
+
+</script>
+
+</body>
+</html>
